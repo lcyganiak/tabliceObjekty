@@ -83,7 +83,8 @@ const numbersFilter = numbers.filter((currentValue) => {
 const numbersFilterOdwrotna = numbers.filter((currentValue) => {
 
     if(currentValue === 0 || currentValue % 2 !== 0 ) {
-        return currentValue
+        console.log(typeof currentValue)
+        return currentValue + ''
     }
 })
 console.log('numbersFilter', numbersFilter)
@@ -258,3 +259,23 @@ const exArrFilterAndMap = exArr.filter((currentValue, index , orginalnaTablica) 
 })
 console.log('finał', exArrFilterAndMap)
 
+const exp1 = [4, 8, 9, 88]
+
+// zwróc tablice [4, 8 , 9, 44]
+
+// zwróć tablicę [2, 4, 44]
+
+const exp1FilterAndMap = exp1.filter((currentValue) => {
+    if(currentValue % 2 === 0) {
+        return currentValue
+    }
+    
+    // wynik [4, 8,44]
+}).map((currentValue) => {
+    return currentValue / 2
+})
+
+
+const named = ['Jan', 'Marta']
+// 
+const imie = named.includes('Ela')
