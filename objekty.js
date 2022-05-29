@@ -29,7 +29,7 @@ class Uczen {
         return `Uczeń ${this.imie} ma lat ${this.wiek}`
     }
     get getStanowisko() {
-        
+
     }
     // set
     set changeImie(value) {
@@ -119,3 +119,107 @@ const object1 = {
  showObj(worker2)
 
  showObj(object1)
+
+
+ class Car {
+     constructor(marka, kolor, silnik) {
+        this.marka = marka;
+        this.kolor = kolor;
+        this.silnik = silnik
+        this.show = function showPrice() {
+
+        }
+     }
+     // gety 
+     get getCena() {
+        const wartoscMarki =   marki.filter((currentValue) => {
+                console.log(currentValue.marka)
+                console.log('podana przez klienta',this.marka)
+                if(currentValue.marka === this.marka) {
+                    return currentValue
+                }
+            })
+        const wartoscKolor = kolory.filter((currentValue)=> currentValue.kolor === this.kolor)
+        const wartoscSilnika = silniki.filter((currentValue) => currentValue.silnik === this.silnik)
+        return wartoscMarki[0].val + wartoscKolor[0].val + wartoscSilnika[0].val
+    }
+     // sety 
+
+     set changeMarka(value) {
+      const jestMarka =  marki.filter((item) => value === item.marka)
+      if(jestMarka.length > 0) {
+        this.marka = value
+      } else {
+          alert("Nie ma takie marki")
+      }
+     }
+
+     set changeKolor(value) {
+
+     }
+
+     set changeSilnik(value) {
+
+     }
+ }
+
+ const marki = [
+    {
+       marka: "Opel",
+       val: 1000
+    },
+    {
+       marka: "BMW",
+       val: 1500
+    },
+    {
+       marka: "Fiat",
+       val: 800
+    }
+]
+
+const kolory = [
+    {
+       kolor: 'czerwony',
+       val: 100
+    },
+    {
+       kolor: 'czarny',
+       val: 200
+    },
+    {
+       kolor: 'zielony',
+       val: 500
+    }
+] 
+const silniki = [
+    {
+        silnik: "Benzyna",
+        val: 2000
+    },
+    {
+       silnik: "Benzyna + gaz",
+       val: 3000
+   },
+   {
+       silnik: "Disel",
+       val: 500
+   }
+]
+const m = ['Fiat', 'Opel']
+const k = ['Czarny', 'Czerwony']
+const c = [1000, 5000]
+// Object.freeze(ofertaSamochodu) nie pozwili na żadną zmine w objekcie ofertaSamochodu
+// Object.seal(ofertaSamochodu) pozwal na zminę wartości, ale nie pozwala dodawać lub usuwać klucz
+const ofertaSamochodu = new Car("Opel","czarny", 'Benzyna + gaz' )
+
+
+Object.seal(ofertaSamochodu)
+// delete ofertaSamochodu.silnik usuwa klucz z wartością z objektu
+// ofertaSamochodu.model = 'fabia' // po uzyciu Object.seal lub Object.freeze nie działa 
+// ofertaSamochodu.changeMarka = 'Fiat'// po uzyciu Object.seal dziła, ale Object.freeze nie działa 
+
+
+console.log('Jaki samochód wybralismy',ofertaSamochodu)
+
+console.log("Cena za samochów", ofertaSamochodu.getCena)

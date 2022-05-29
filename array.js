@@ -287,3 +287,4 @@ const napis = "Lubię Niedzielę"
 
 const podzielonyNapis = napis.split('').reverse().join('')
 console.log(podzielonyNapis)
+let name = 'Mouse'
