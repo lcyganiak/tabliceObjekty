@@ -223,3 +223,13 @@ Object.seal(ofertaSamochodu)
 console.log('Jaki samochód wybralismy',ofertaSamochodu)
 
 console.log("Cena za samochów", ofertaSamochodu.getCena)
+
+const tablica = ['Real', 'Juventus', 'Porto', "PSG", "Liverpol", 'Legia', 'Lech', "Widzew"]
+
+
+
+// 1. Zwróć tablice w której wszystkie nazwy klubów pisne sa dużymi literami.
+// 2. Zwróć tablice, z tymi tymi klubami któych nazwa jest dłuższ niż 5 litery
+// 3. napisz funkcję która bedzie sprawdzać czy podany klub wystepuję w tablicy, jezeli klubu nie mam w tablicy to go dodajemy
+// np. function czyJest(fraza) {}
+
