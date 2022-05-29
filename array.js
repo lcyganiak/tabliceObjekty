@@ -279,3 +279,11 @@ const exp1FilterAndMap = exp1.filter((currentValue) => {
 const named = ['Jan', 'Marta']
 // 
 const imie = named.includes('Ela')
+
+
+// zadanie odwróć string 
+
+const napis = "Lubię Niedzielę"
+
+const podzielonyNapis = napis.split('').reverse().join('')
+console.log(podzielonyNapis)
